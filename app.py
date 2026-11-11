@@ -126,7 +126,6 @@ if __name__ == "__main__":
         print(final_df[actual_cols].head(3))
     else:
         print("조건에 맞는 실거래가 데이터가 존재하지 않거나 수집에 실패했습니다.")
-
 import os
 import requests
 import pandas as pd
@@ -227,7 +226,6 @@ if __name__ == "__main__":
         print(final_df[['검색어', '장소명', '경도(X)', '위도(Y)']].head())
     else:
         print("조건에 맞는 인프라 데이터가 수집되지 않았습니다.")
-
 import streamlit as st
 import pandas as pd
 import os
