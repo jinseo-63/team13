@@ -1,28 +1,21 @@
 # team13
-# 🏡 부산대 원룸 및 인프라 데이터 분석 앱 (Team 13)
+# 🏡 부산대 원룸 및 인프라 데이터 분석 (Team 13)
 
-## 📝 프로젝트 소개
-부산대학교 인근 원룸(단독/다가구, 연립/다세대) 전월세 실거래가와 주요 생활 인프라(편의점, 코인세탁소, 지하철역 등) 데이터를 분석하고 요약해 주는 웹 애플리케이션입니다. 
-사용자가 직접 데이터(CSV)를 업로드하면 필수 결측치를 자동으로 처리하고, 거래 요약 지표(평균 보증금, 월세 등)와 상세 데이터 표를 직관적인 화면으로 제공합니다.
+## 📌 프로젝트 소개
+부산대학교 인근(장전동)의 원룸 전월세 실거래가와 주요 인프라(편의점, 코인세탁소, 대형마트, 지하철역 등) 데이터를 조회하고 요약해 주는 웹 애플리케이션입니다. 사용자가 직접 CSV 파일을 업로드하면 결측치를 자동으로 처리하고, 핵심 지표(총 거래 수, 평균 보증금/월세 등)와 상세 데이터를 테이블 형태로 한눈에 확인할 수 있습니다.
 
-## 👥 팀원
+## 👨‍💻 팀원
 * 김별이: 데이터 수집 및 전처리
 * 박진서: 데이터 분석 및 시각화
-* 윤설인: 역할 Streamlit 앱 구현 및 영상
+* 윤설인: Streamlit 앱 구현 및 영상
 
 ## 🛠 사용 라이브러리
-* **Python** (버전 3.x)
-* **Streamlit**: 웹 인터페이스(UI) 구성 및 로컬 파일 업로드 위젯 구현
-* **Pandas**: CSV 데이터 읽기, 결측치 필터링, 데이터프레임 전처리 및 요약 연산
+* `Python` 
+* `streamlit`: 웹 애플리케이션 UI 구성 및 실행
+* `pandas`: CSV 데이터 로드, 결측치 처리 및 데이터프레임 가공
 
 ## 🚀 실행 방법
-
-터미널(또는 명령 프롬프트)을 열고 아래 명령어들을 순서대로 입력하여 로컬 환경에서 앱을 실행할 수 있습니다.
-
-**1. 프로젝트 다운로드 및 폴더 이동**
-```bash
-git clone [https://github.com/jinseo-63/team13.git](https://github.com/jinseo-63/team13.git)
-cd team13
-<img width="1827" height="667" alt="image" src="https://github.com/user-attachments/assets/900e5075-eadd-4f81-873f-dc065504c82c" />
-<img width="1605" height="650" alt="image" src="https://github.com/user-attachments/assets/53a4f08d-7543-4fbb-ab04-16528e23b0d9" />
-<img width="1586" height="627" alt="image" src="https://github.com/user-attachments/assets/aef5d334-3565-43e7-b86c-d34a5a441bc1" />
+1. 프로젝트 저장소를 로컬 환경으로 클론(Clone)하거나 다운로드합니다.
+   ```bash
+   git clone [https://github.com/jinseo-63/team13.git](https://github.com/jinseo-63/team13.git)
+   cd team13
