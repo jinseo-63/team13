@@ -18,4 +18,3 @@
 터미널에서 아래 명령어를 입력하여 실행합니다.
 ```bash
 streamlit run app.py
-
