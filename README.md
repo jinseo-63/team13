@@ -19,3 +19,4 @@
    ```bash
    git clone [https://github.com/jinseo-63/team13.git](https://github.com/jinseo-63/team13.git)
    cd team13
+<img width="1603" height="655" alt="화면 캡처 2026-11-11 195150" src="https://github.com/user-attachments/assets/d6a96d08-6f4f-4ae9-8807-51ac7f05f240" />
