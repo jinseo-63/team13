@@ -93,7 +93,7 @@ def main():
             if data_type == "전월세":
                 file_path = "rent_clean.csv"
                 if os.path.exists(file_path):
-                    raw_df = pd.read_csv(file_path)
+                    raw_df = pd.read_csv(file_path, on_bad_lines='skip')
                     rent_df, dropped = process_rent_data(raw_df)
 
                     st.write(f"결측치 처리 안내: {dropped}개의 행이 제외되었습니다.")
