@@ -24,3 +24,5 @@
 git clone [https://github.com/jinseo-63/team13.git](https://github.com/jinseo-63/team13.git)
 cd team13
 <img width="1827" height="667" alt="image" src="https://github.com/user-attachments/assets/900e5075-eadd-4f81-873f-dc065504c82c" />
+<img width="1605" height="650" alt="image" src="https://github.com/user-attachments/assets/53a4f08d-7543-4fbb-ab04-16528e23b0d9" />
+<img width="1586" height="627" alt="image" src="https://github.com/user-attachments/assets/aef5d334-3565-43e7-b86c-d34a5a441bc1" />
