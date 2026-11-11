@@ -20,6 +20,7 @@
 
 ```bash
 streamlit run app.py
+```bash
 
 <img width="1592" height="639" alt="화면 캡처 전월세" src="https://github.com/user-attachments/assets/0d13e6a3-623b-469d-a01f-85f74db07ddf" />
 <img width="1603" height="655" alt="화면 캡처 인프라" src="https://github.com/user-attachments/assets/1f1d28a3-67d0-4782-8d74-b63b80355956" />
