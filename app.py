@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 # 1. 전월세 데이터 전처리 함수
 def process_rent_data(df):
     initial_count = len(df)
