@@ -15,8 +15,11 @@
 * `pandas`: CSV 데이터 로드, 결측치 처리 및 데이터프레임 가공
 
 ## 🚀 실행 방법
+
 터미널에서 아래 명령어를 입력하여 실행합니다.
+
 ```bash
 streamlit run app.py
 
-## 앱 실행 화면
+<img width="1592" height="639" alt="화면 캡처 전월세" src="https://github.com/user-attachments/assets/0d13e6a3-623b-469d-a01f-85f74db07ddf" />
+<img width="1603" height="655" alt="화면 캡처 인프라" src="https://github.com/user-attachments/assets/1f1d28a3-67d0-4782-8d74-b63b80355956" />
