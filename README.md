@@ -15,9 +15,9 @@
 * `pandas`: CSV 데이터 로드, 결측치 처리 및 데이터프레임 가공
 
 ## 🚀 실행 방법
-1. 프로젝트 저장소를 로컬 환경으로 클론(Clone)하거나 다운로드합니다.
-   ```bash
-   git clone [https://github.com/jinseo-63/team13.git](https://github.com/jinseo-63/team13.git)
-   cd team13
+터미널에서 아래 명령어를 입력하여 실행합니다.
+```bash
+streamlit run app.py
+
 ## ✅ 앱 실행 화면
 <img width="1603" height="655" alt="화면 캡처 2026-11-11 195150" src="https://github.com/user-attachments/assets/d6a96d08-6f4f-4ae9-8807-51ac7f05f240" />
