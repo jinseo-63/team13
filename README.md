@@ -1,6 +1,6 @@
 # 부산대 인근 원룸 실거래가 및 생활 인프라 통합 분석 대시보드
 
-> **배포 URL:** [여기에 Streamlit Cloud 배포 URL을 입력하세요](https://share.streamlit.io/)
+> **배포 URL:** https://team13-b9kpuy7s8urfm3z5gm4usw.streamlit.app/
 
 ---
 
@@ -44,7 +44,6 @@
 
 ## 4. 사용 라이브러리
 
-* **언어**: Python 3.10+
 * **웹 프레임워크**: `streamlit`
 * **데이터 처리 및 통계 분석**: `pandas`, `numpy`, `scipy`
 * **지도 시각화**: `folium`, `streamlit-folium`
