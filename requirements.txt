@@ -1,3 +1,7 @@
 streamlit
 pandas
-python
+numpy
+scipy
+folium
+streamlit-folium
+plotly
