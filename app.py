@@ -302,11 +302,11 @@ def create_folium_map(filtered_df, infra_df, selected_infras):
     else:
         center_lat, center_lon = 35.2335, 129.0846  # 부산대 기본 좌표
 
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=14, tiles='CartoDB positron')
+    # API 키가 필요 없는 OpenStreetMap 타일 사용
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=14, tiles='OpenStreetMap')
 
     # 1) 원룸 실거래가 분포 히트맵 레이어
     if not valid_rent.empty:
-        # 월세 또는 거래 밀도를 가중치로 활용
         weights = valid_rent['월세'].replace(0, valid_rent['월세'].mean() if valid_rent['월세'].mean() > 0 else 1)
         heat_data = [[row['위도'], row['경도'], float(w)] for (_, row), w in zip(valid_rent.iterrows(), weights)]
         HeatMap(
@@ -403,7 +403,6 @@ def plot_correlation_scatter(filtered_df, dist_col='선택인프라_평균거리
         labels={dist_col: f'{dist_col}', '월세': '월세 (만 원)'}
     )
 
-    # 추세선 및 상관계수 계산
     annotation_text = "상관계수 산출 불가 (표본 또는 분산 부족)"
     if len(monthly_df) >= 3 and monthly_df[dist_col].nunique() > 1 and monthly_df['월세'].nunique() > 1:
         r, p = pearsonr(monthly_df[dist_col], monthly_df['월세'])
@@ -451,7 +450,6 @@ def plot_price_distribution(filtered_df):
         subplot_titles=('보증금 분포 (만 원)', '월세 분포 (만 원, 전세 제외)')
     )
 
-    # 1) 보증금 박스플롯 + 히스토그램
     if '보증금' in filtered_df.columns and not filtered_df['보증금'].dropna().empty:
         fig.add_trace(
             go.Box(x=filtered_df['보증금'], name='보증금', marker_color='#3498DB', boxmean=True),
@@ -462,7 +460,6 @@ def plot_price_distribution(filtered_df):
             row=2, col=1
         )
 
-    # 2) 월세(전세 제외) 박스플롯 + 히스토그램
     monthly_df = filtered_df[filtered_df['거래유형'] == '월세'] if '거래유형' in filtered_df.columns else filtered_df
     if '월세' in monthly_df.columns and not monthly_df['월세'].dropna().empty:
         fig.add_trace(
@@ -502,7 +499,6 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.header("2. 검색 및 분석 필터")
 
-    # 희망 주거 형태 라디오 버튼
     housing_choice = st.sidebar.radio(
         "희망 주거 형태",
         options=["전체", "전세", "월세"],
@@ -510,7 +506,6 @@ def main():
         horizontal=True
     )
 
-    # 필수 인프라 선택 체크박스
     st.sidebar.write("필수 인프라 선택 (지도 표시 및 점수 반영)")
     chk_cvs = st.sidebar.checkbox("편의점", value=True)
     chk_subway = st.sidebar.checkbox("지하철역", value=True)
@@ -527,22 +522,18 @@ def main():
     if chk_mart:
         selected_infras.append("마트")
 
-    # 파일이 모두 업로드되지 않은 경우 안내 메시지 출력
     if rent_file is None or infra_file is None:
         st.info("왼쪽 사이드바에서 '전월세 CSV 파일'과 '인프라 CSV 파일'을 모두 업로드해 주세요.")
         return
 
-    # 데이터 로드 및 전처리 실행
     raw_rent = load_uploaded_csv(rent_file)
     raw_infra = load_uploaded_csv(infra_file)
 
     rent_df, rent_dropped = process_rent_data(raw_rent)
     infra_df, infra_dropped = process_infra_data(raw_infra)
 
-    # 1단계 분석: 인프라 거리 및 선택 인프라 기반 접근성 점수 계산
     merged_df = calculate_infra_distance(rent_df, infra_df, selected_infras)
 
-    # 보증금 및 월세 예산 범위 조절 슬라이더 (데이터 범위 기반 동적 설정)
     min_dep = int(merged_df['보증금'].min()) if not merged_df.empty else 0
     max_dep = int(merged_df['보증금'].max()) if not merged_df.empty else 10000
     if min_dep >= max_dep:
@@ -570,7 +561,6 @@ def main():
         step=5 if (max_rent - min_rent) >= 5 else 1
     )
 
-    # 사이드바 필터 조건 적용
     filtered_df = merged_df.copy()
     if housing_choice != "전체" and '거래유형' in filtered_df.columns:
         filtered_df = filtered_df[filtered_df['거래유형'] == housing_choice]
@@ -635,7 +625,6 @@ def main():
     st.markdown("---")
     st.subheader("4. 보고서용 분석 시각화 차트 3종")
 
-    # 차트 1 & 차트 2 가로 2단 배치
     chart_col1, chart_col2 = st.columns(2)
     with chart_col1:
         if not rank_df.empty:
@@ -650,7 +639,6 @@ def main():
         fig2 = plot_correlation_scatter(filtered_df, dist_col=selected_dist_col)
         st.plotly_chart(fig2, use_container_width=True)
 
-    # 차트 3 전체 폭 배치
     fig3 = plot_price_distribution(filtered_df)
     st.plotly_chart(fig3, use_container_width=True)
 
