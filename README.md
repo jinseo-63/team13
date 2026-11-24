@@ -23,13 +23,15 @@
 
 ## 2. 앱 실행 화면
 
-> GitHub 저장소에 `images` 폴더를 만들고 캡처 이미지를 업로드한 뒤 아래 파일 경로를 맞춰주세요.
 
 ### 메인 대시보드 및 인터랙티브 지도
-![메인 대시보드 및 지도 화면](./images/dashboard_map.png)
+<img width="1289" height="885" alt="image" src="https://github.com/user-attachments/assets/ec190c9e-18b1-4fa1-899c-25b12d5b7ffd" />
+
 
 ### 구역별 가성비 순위 및 분석 차트
-![분석 차트 및 데이터 테이블 화면](./images/dashboard_charts.png)
+<img width="1289" height="838" alt="image" src="https://github.com/user-attachments/assets/c545e1a2-49a8-4f8c-bb7f-084aa0a1946f" />
+<img width="1287" height="854" alt="image" src="https://github.com/user-attachments/assets/7ea7d667-a3b9-4109-ba32-482238f62d67" />
+
 
 ---
 
